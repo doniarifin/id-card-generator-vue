@@ -1,5 +1,7 @@
 # ID Card Generator Vue 3 + Tailwind
-simple ID card genator using Vue 3   
+simple ID card generator using Vue 3
+
+live demo [click here](https://id-card-generator-vue.vercel.app/)
 
 ## Project setup
 ```
