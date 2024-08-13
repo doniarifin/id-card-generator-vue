@@ -3,7 +3,7 @@
     <div class="mb-2">
       <h1 class="font-medium">ID Card Generator</h1>
     </div>
-    <div class="p-3 bg-gray-100 rounded-lg">
+    <div class="p-3 bg-gray-100 rounded-lg dark:bg-transparent">
       <form @submit.prevent="handleSubmit">
         <div class="grid gap-6 mb-6 md:grid-cols-2">
           <div>
