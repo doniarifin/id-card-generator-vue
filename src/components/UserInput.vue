@@ -1,4 +1,7 @@
 <template>
+  <div>
+    <Loading :isLoading="data.isLoading" />
+  </div>
   <div class="user-input w-full">
     <div class="mb-2">
       <h1 class="font-medium">ID Card Generator</h1>
@@ -76,6 +79,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useUserDataStore } from '@/stores/userData';
+import Loading  from '@/components/Loading.vue';
 
 const formData = ref({
   first_name: '',
@@ -87,12 +91,21 @@ const formData = ref({
   email: ''
 });
 
+const data = ref({
+  isLoading: false,
+})
+
 const router = useRouter();
 const userDataStore = useUserDataStore();
 
 const handleSubmit = () => {
+  data.value.isLoading = true;
   userDataStore.setUserData(formData.value);
-  router.push({ name: 'GeneratedCard' });
+
+  setTimeout(() => {
+    data.value.isLoading = false;
+    router.push({ name: 'GeneratedCard' });
+  }, 1000);
 };
 
 </script>
